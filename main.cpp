@@ -25,6 +25,29 @@ void Draw()
 // tail follows head
 // fruit increase tails
 // if the head hits the tail or the wall, you loose
+    system("clear");
+    for (int i = 0; i < width; i++) 
+        cout << "#";
+    cout << endl;
+
+    for (int i = 0; i < height + 2; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            if (j == 0)
+                cout << "#";
+
+                cout << " ";
+
+            if (j == width-1)
+                cout << "#";
+        }
+        cout << endl;
+    }
+    
+    for (int i = 0; i < width + 2; i++) 
+        cout << "#";
+    cout << endl;
 }
 
 void Input()

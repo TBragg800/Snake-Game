@@ -70,28 +70,50 @@ void Input()
         case KEY_LEFT:
             dir = LEFT;
             break;
-        
         case KEY_RIGHT:
             dir = RIGHT;
             break;
-
         case KEY_UP:
             dir = UP;
             break;
-
         case KEY_DOWN:
             dir = DOWN;
             break;
-        
-    case 113:
-        gameOver = true;
-        break;
+        case 113:
+            gameOver = true;
+            break;
     }
 }
 
 void Logic()
 {
 
+    switch (dir)
+    {
+        case LEFT:
+            x--;
+            break;
+        case RIGHT:
+            x++;
+            break;
+        case UP:
+            y--;
+            break;
+        case DOWN:
+            y++;
+            break;
+        default:
+            break;
+    }
+    if (x > width || x < 1 || y > height || y < 1)
+        gameOver = true;
+
+    if (x == FruitX && y == FruitY)
+    {
+        score++;
+        FruitX = (rand()%width)+1;
+        FruitY = (rand()%height)+1;
+    }
 }
 
 int main() 
@@ -104,7 +126,8 @@ int main()
         Logic();
         //Sleep(10); sleep(10);
     }
-    
+    getch();
+    endwin();
 
     return 0;
 }

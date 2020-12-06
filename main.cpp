@@ -136,7 +136,14 @@ void Logic()
         score++;
         FruitX = (rand()%width)+1;
         FruitY = (rand()%height)+1;
+        nTail++;
     }
+    
+    for (int i =  0; i < nTail; i++)
+        if (TailX[i] == x && TailY[i] == y)
+        {
+            gameOver = true;
+        }
 }
 
 int main() 
@@ -147,7 +154,6 @@ int main()
         Draw();
         Input();
         Logic();
-        //Sleep(10); sleep(10);
     }
     getch();
     endwin();

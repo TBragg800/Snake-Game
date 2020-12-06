@@ -8,6 +8,8 @@ int x, y, FruitX, FruitY, score;
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN};
 eDirection dir;
 
+int TailX[100], TailY[100];
+int nTail = 0;
 
 void Setup()
 {
@@ -50,6 +52,12 @@ void Draw()
                mvprintw(i, j, "O");
             else if (i == FruitY && j == FruitX)
                mvprintw(i, j, "@");
+            else
+                for (int k = 0; k < nTail; k++)
+                {
+                    if (TailX[k] == j && TailY[k] == i)
+                        mvprintw(i, j, "O");
+                }
         }
         
     }
@@ -87,6 +95,21 @@ void Input()
 
 void Logic()
 {
+    int prevX = TailX[0];
+    int prevY = TailY[0];
+    int prev2X, prev2Y;
+    TailX[0] = x;
+    TailY[0] = y;
+
+    for (int i = 1; i < nTail; i++)
+    {
+        prev2X = TailX[i];
+        prev2Y = TailY[i];
+        TailX[i] = prevX;
+        TailY[i] = prevY;
+        prevX = prev2X;
+        prevY = prev2Y;
+    }
 
     switch (dir)
     {

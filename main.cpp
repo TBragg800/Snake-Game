@@ -19,10 +19,10 @@ void Setup()
 
     gameOver = false;
     dir = STOP;
-    x = width / 2;
-    y = height / 2;
-    fruitX = (rand() % width) + 1;
-    fruitY = (rand() % height) + 1;
+    x = width/2;
+    y = height/2;
+    FruitX = (rand()%width)+1;
+    FruitY = (rand()%height)+1;
     score = 0;
 }
 
@@ -32,38 +32,61 @@ void Draw()
 // tail follows head
 // fruit increase tails
 // if the head hits the tail or the wall, you loose
-    // system("clear");
-    // for (int i = 0; i < width; i++) 
-    //     cout << "#";
-    // cout << endl;
 
-    // for (int i = 0; i < height + 2; i++)
-    // {
-    //     for (int j = 0; j < width; j++)
-    //     {
-    //         if (j == 0)
-    //             cout << "#";
-    //         if (i == y && j == x)
-    //             cout << "O";
-    //         else if (i == fruitY && j == fruitX)
-    //             cout << "F";
-    //         else
-    //             cout << " ";
+    clear();
 
-    //         if (j == width-1)
-    //             cout << "#";
-    //     }
-    //     cout << endl;
-    // }
-    
-    // for (int i = 0; i < width + 2; i++) 
-    //     cout << "#";
-    // cout << endl;
+    for (int i = 0; i < width+2; i++)
+        mvprintw(0, i, "+");
+
+    for (int i = 0; i < height+2; i++)
+    {
+        for (int j = 0; j < width+2; j++)
+        {
+            if (i == 0 | i == 21)
+               mvprintw(i, j, "+");
+            else if (j == 0 | j == 21)
+               mvprintw(i, j, "+");
+            else if (i == y && j == x)
+               mvprintw(i, j, "O");
+            else if (i == FruitY && j == FruitX)
+               mvprintw(i, j, "@");
+        }
+        
+    }
+
+    mvprintw(23, 0, "Score %d", score);
+    refresh();
+    getch();
+    endwin();
 }
 
 void Input()
 {
+    keypad(stdscr, TRUE);
+    halfdelay(1);
+    int c = getch();
+    switch (c)
+    {
+        case KEY_LEFT:
+            dir = LEFT;
+            break;
+        
+        case KEY_RIGHT:
+            dir = RIGHT;
+            break;
 
+        case KEY_UP:
+            dir = UP;
+            break;
+
+        case KEY_DOWN:
+            dir = DOWN;
+            break;
+        
+    case 113:
+        gameOver = true;
+        break;
+    }
 }
 
 void Logic()
@@ -84,4 +107,4 @@ int main()
     
 
     return 0;
-// }
+}

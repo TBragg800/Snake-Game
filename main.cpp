@@ -64,8 +64,6 @@ void Draw()
 
     mvprintw(23, 0, "Score %d", score);
     refresh();
-    getch();
-    endwin();
 }
 
 void Input()

@@ -10,7 +10,8 @@ Snake Game created in C++
 ## Walkthrough Video Demonstration: 
 
 * YouTube link to the 
-[walkthrough](https://www.youtube.com/watch?v=OAv2QsOZ4l4)
+![Walkthrough](./assets/snake-game.gif)
+[walkthrough](https://youtu.be/aXHI8nWp8UQ)
 
 ## Table of Contents
   [Description](#Description)
@@ -21,25 +22,18 @@ Snake Game created in C++
 
   [License](#License)
 
-  [Contributing](#Contributing)
-
-  [Tests](#Tests)
-
   [Questions](#Questions)
   
 ## Description
- This project is a Content Management System made available to the users CLI. This application utilizes node.js to inquirer, and MySQL to architect and build a solution for managing a company's employees.
+ This project is a terminal snake game written in C++. It uses the ncurses library and was built following the JH & co. tutorial series which can be viewed at https://www.youtube.com/watch?v=OAv2QsOZ4l4. This project was built for the purpose of learning and advancing my knowledge of C++. This code was written to be compatible with Mac operating systems.
 
 ## Installation
 * Begin by cloning the repo locally.
-*
-* Using the CLI, the user should navigate to the project directory and 
-
 
 ## Usage
-  After installation, the user should run '' in the CLI, then play the game.
+  After installation, the user should navigate to the project directory and run the command 'g++ -lncurses main.cpp' in the CLI. An executable file should now be available. Next, while still in the project directory, the user will execute the executable file by typing the command './a.out' in the CLI. Enjoy the game.
 
-![]()
+![](./assets/snake-game1.png)
 
 ## License
   MIT License
@@ -64,17 +58,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Contributing
-  Fork the project & clone locally. Create an upstream remote and sync your local copy before you branch. Branch for each separate piece of work. Do the work, write good commit messages, and read the CONTRIBUTING file if there is one. Push to your origin repository. Create a new PR in GitHub.
-
-## Tests
-  There are no test instructions at this time.
-
 ## Questions
   All questions should be submitted to the email listed below. Please consult the GitHub profile or Repo for additional concerns. 
   Email: Ttbbragg83@gmail.com
   Github: [TBragg800](http://github.com/TBragg800)
 
 ## Screenshot of deployed application
-![]()
+![](./assets/snake-game2.png)
 
